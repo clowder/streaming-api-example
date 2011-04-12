@@ -6,14 +6,11 @@ GEM
       rack (>= 1.2.1)
       sinatra (>= 1.0)
     columnize (0.3.2)
+    daemons (1.1.2)
     eventmachine (0.12.10)
-    kgio (2.3.3)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     rack (1.2.2)
-    rainbows (3.2.0)
-      rack (~> 1.1)
-      unicorn (~> 3.5)
     ruby-debug-base19 (0.11.25)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
@@ -27,10 +24,11 @@ GEM
     sinatra (1.2.2)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
+    thin (1.2.11)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     tilt (1.2.2)
-    unicorn (3.5.0)
-      kgio (~> 2.3)
-      rack
 
 PLATFORMS
   ruby
@@ -38,6 +36,6 @@ PLATFORMS
 DEPENDENCIES
   async_sinatra
   eventmachine
-  rainbows
   ruby-debug19
   sinatra
+  thin

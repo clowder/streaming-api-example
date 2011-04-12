@@ -8,7 +8,7 @@ class Server < Sinatra::Base
   register Sinatra::Async
 
   subscribers = []
-
+  
   aget '/' do
     subscriber =  Subscriber.new
     subscribers << subscriber
@@ -17,8 +17,6 @@ class Server < Sinatra::Base
   end
 
   post '/' do
-    puts subscribers.object_id
-    puts subscribers.count
     message = params[:message]
     subscribers.each { |sub| sub << message }
     body "Message Sent to Subscribers!"
